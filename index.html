@@ -119,6 +119,11 @@
         div.textContent = `${item.category}: ${item.amount} ₽`;
         list.appendChild(div);
         sum += item.amount;
+
+      gtag('event', 'add_expense', {
+        category: category,
+        amount: amount
+        
       });
 
       total.textContent = `Итого: ${sum} ₽`;
