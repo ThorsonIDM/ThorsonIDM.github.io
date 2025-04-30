@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-B24PW6HEHQ');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Учёт трат</title>
+
+  <!-- Google Analytics tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B24PW6HEHQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B24PW6HEHQ');
+  </script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -32,102 +34,4 @@
       margin-bottom: 5px;
     }
     input, select {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    .expenses {
-      margin-top: 30px;
-    }
-    .expense-item {
-      background: white;
-      padding: 10px;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      border-left: 4px solid #4CAF50;
-    }
-    .total {
-      font-weight: bold;
-      font-size: 18px;
-      margin-top: 20px;
-      text-align: right;
-    }
-  </style>
-</head>
-<body>
-  <h1>Учёт трат за месяц</h1>
-
-  <div class="form-group">
-    <label for="category">Категория</label>
-    <select id="category">
-      <option value="Одежда">Одежда</option>
-      <option value="Досуг">Досуг</option>
-      <option value="Еда">Еда</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="amount">Сумма (₽)</label>
-    <input type="number" id="amount" placeholder="Например, 1500" />
-  </div>
-
-  <button onclick="addExpense()">Добавить трату</button>
-
-  <div class="expenses" id="expensesList"></div>
-
-  <div class="total" id="totalSum">Итого: 0 ₽</div>
-
-  <script>
-    const expenses = [];
-    function addExpense() {
-      const category = document.getElementById("category").value;
-      const amountInput = document.getElementById("amount");
-      const amount = parseFloat(amountInput.value);
-
-      if (isNaN(amount) || amount <= 0) {
-        alert("Введите корректную сумму");
-        return;
-      }
-
-      expenses.push({ category, amount });
-      amountInput.value = "";
-
-      updateExpenses();
-    }
-
-    function updateExpenses() {
-      const list = document.getElementById("expensesList");
-      const total = document.getElementById("totalSum");
-      list.innerHTML = "";
-      let sum = 0;
-
-      expenses.forEach((item) => {
-        const div = document.createElement("div");
-        div.className = "expense-item";
-        div.textContent = `${item.category}: ${item.amount} ₽`;
-        list.appendChild(div);
-        sum += item.amount;
-
-      gtag('event', 'add_expense', {
-        category: category,
-        amount: amount
-        
-      });
-
-      total.textContent = `Итого: ${sum} ₽`;
-    }
-  </script>
-</body>
-</html>
+      width:
